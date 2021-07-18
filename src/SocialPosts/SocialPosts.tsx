@@ -26,6 +26,8 @@ function SocialPosts() {
     ]);
 
     const [modalIsOpen, setIsOpen] = useState(false);
+    
+    //const [vote, setVote] = useState(0);
 
     function openModal() {
         setIsOpen(true);
@@ -48,6 +50,10 @@ function SocialPosts() {
         closeModal();
     }
 
+    function handleUpVote() {
+        
+    }
+
     return (
         <div className="SocialPosts">
             <h1>Doge Thoughts</h1>
@@ -60,6 +66,7 @@ function SocialPosts() {
                     key={socialPost.title}
                     post={socialPost}
                     onDelete={ () => handleDelete(index) }
+                    onUpVote={handleUpVote}
                 />
                 )}
             </div>
@@ -69,11 +76,6 @@ function SocialPosts() {
             >
                 <PostForm onSubmit={handleAdd} onClose={handleClose}/>
             </Modal>
-            {/* <div className="temporary-form-container">
-                    <h2>Temporary Form View for Testing</h2>
-                    <PostForm onSubmit={handleAdd}/>
-            </div> */}
-            
         </div>
     )
 }

@@ -10,5 +10,34 @@
     margin: 0px 50px;
     border-bottom: solid gray 1px;
     align-items: center;
-    height: 100px;
+    height: 120px;
+}
+
+.PostInList .title-container {
+    margin: 0px;
+}
+
+.PostInList .thought-container {
+    margin: 10px 0;
+}
+
+.upvote {
+    border-radius: 100px;
+    font-family: 'Dosis';
+    font-size: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: #79c5e8;
+}
+
+.upvote-container {
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
 }

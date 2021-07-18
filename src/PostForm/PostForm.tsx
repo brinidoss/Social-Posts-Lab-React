@@ -28,7 +28,7 @@ function handleSubmit(e: FormEvent) {
 
     return (
         <form className="PostForm" onSubmit={ handleSubmit }>
-            <FontAwesomeIcon icon={faTimesCircle} className="close-icon" onClick={ onClose }/>
+            <FontAwesomeIcon icon={faTimesCircle} className="close-icon" onClick={ onClose} />
             <label htmlFor="form-title">Title</label>
             <input type="text" name="form-title" id="form-title" value={title} onChange={ (e) => setTitle(e.target.value) }/>
             <label htmlFor="form-thought">Thought</label>
