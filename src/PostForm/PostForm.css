@@ -1,0 +1,38 @@
+.PostForm {
+    background-color: #79c5e8;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 300px;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid black 1px;
+    position: relative;
+}
+
+.PostForm .add-post-button {
+    height: 40px;
+    font-family: 'Dosis';
+    border-radius: 5px;
+    border: solid black 2px;
+    background-color: #f3f1f7;
+}
+
+.PostForm input {
+    border-radius: 5px;
+    height: 30px;
+    border: solid black 2px;
+}
+
+.PostForm textarea {
+    border-radius: 5px;
+    border: solid black 2px;
+    height: 100px;
+}
+
+.PostForm .close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
