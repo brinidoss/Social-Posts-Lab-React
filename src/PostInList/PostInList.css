@@ -38,6 +38,88 @@
     align-items: center;
 }
 
+.upvote-text {
+    width: 20px;
+}
+
 .hidden {
     display: none;
 }
+
+.reactions {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+}
+
+.reactions-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.selected-reactions {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
+
+.ReactionBarSelector_Idle {
+    -webkit-animation: slide-out 0.5s ease-in-out;
+    animation: slide-out 0.5s ease-in-out;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .ReactonBarSelector_Active {
+    -webkit-animation: slide-in 0.5s ease-in-out;
+    animation: slide-in 0.5s ease-in-out;
+  }
+
+  @-webkit-keyframes slide-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+    }
+  }
+  
+  @-webkit-keyframes slide-out {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateX(100%);
+    }
+  }
+  
+  @keyframes slide-out {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateX(100%);
+    }
+  }
+  

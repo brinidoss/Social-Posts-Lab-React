@@ -6,29 +6,27 @@ import PostForm from '../PostForm/PostForm';
 import Modal from 'react-modal';
 
 function SocialPosts() {
-    const [socialPosts, setSocialPosts] = useState([
+    let [socialPosts, setSocialPosts] = useState([
         {
             title: 'Couch',
-            thought: 'Such comfy'
+            thought: 'Such comfy',
         },
         {
             title: 'Doge',
-            thought: 'Wow!'
+            thought: 'Wow!',
         },
         {
             title: 'Treat',
-            thought: 'Very joy'
+            thought: 'Very joy',
         },
         {
             title: 'Vet',
-            thought: 'So scare'
+            thought: 'So scare',
         }
     ]);
 
     const [modalIsOpen, setIsOpen] = useState(false);
     
-    //const [vote, setVote] = useState(0);
-
     function openModal() {
         setIsOpen(true);
     }
@@ -42,7 +40,7 @@ function SocialPosts() {
     };
 
     function handleAdd(formPost: Post) {
-        setSocialPosts(prevSocialPosts => [...prevSocialPosts, formPost]);
+        setSocialPosts(prevSocialPosts => [formPost, ...prevSocialPosts]);
         closeModal();
     };
 
@@ -50,9 +48,14 @@ function SocialPosts() {
         closeModal();
     }
 
-    function handleUpVote() {
-        
+    function handleUpVote(index: number) {
+       if (index > 0) {
+           setSocialPosts(prevSocialPosts => [...prevSocialPosts.slice(0, index-1), ...prevSocialPosts.slice(index, index+1), ...prevSocialPosts.slice(index-1, index), ...prevSocialPosts.slice(index+1)]);
+       }
     }
+
+
+    
 
     return (
         <div className="SocialPosts">
@@ -66,7 +69,7 @@ function SocialPosts() {
                     key={socialPost.title}
                     post={socialPost}
                     onDelete={ () => handleDelete(index) }
-                    onUpVote={handleUpVote}
+                    onUpVote={() => handleUpVote(index)}
                 />
                 )}
             </div>
